@@ -1,4 +1,5 @@
-
+# microbit-temperature-logger
+## This program logs temperature in a given time duration and breaks that time duration into multiple intervals which can be set manually
 > Open this page at [https://yeshuadcosta.github.io/microbit-temperature-logger/](https://yeshuadcosta.github.io/microbit-temperature-logger/)
 
 ## Use as Extension
