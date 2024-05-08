@@ -3,7 +3,7 @@ input.onButtonPressed(Button.A, function () {
 })
 input.onButtonPressed(Button.AB, function () {
     music._playDefaultBackground(music.builtInPlayableMelody(Melodies.JumpUp), music.PlaybackMode.InBackground)
-    while (true) {
+    while (logging == true) {
         // 5 Second Interval
         actualtime = time * timeinterval
         datalogger.log(
@@ -15,8 +15,8 @@ input.onButtonPressed(Button.AB, function () {
         iterations
         )
         if (time == iterations) {
+            logging = false
             terminate()
-            break;
         }
         // Increment once after every iteration
         time += 1
@@ -29,6 +29,7 @@ input.onButtonPressed(Button.B, function () {
 input.onLogoEvent(TouchButtonEvent.Pressed, function () {
     music._playDefaultBackground(music.builtInPlayableMelody(Melodies.Funeral), music.PlaybackMode.InBackground)
     basic.showIcon(IconNames.Skull)
+    logging = false
     datalogger.deleteLog(datalogger.DeleteType.Full)
 })
 // This function should be executed on time duration end
@@ -39,6 +40,7 @@ function terminate () {
     basic.showIcon(IconNames.SmallDiamond)
     basic.showIcon(IconNames.Yes)
 }
+let logging = false
 let actualtime = 0
 let time = 0
 let iterations = 0
