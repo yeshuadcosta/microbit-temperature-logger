@@ -1,5 +1,5 @@
 input.onButtonPressed(Button.A, function () {
-    basic.showString("" + input.temperature())
+    basic.showString("" + (input.temperature()))
 })
 input.onButtonPressed(Button.AB, function () {
     music._playDefaultBackground(music.builtInPlayableMelody(Melodies.JumpUp), music.PlaybackMode.InBackground)
@@ -24,9 +24,9 @@ input.onButtonPressed(Button.AB, function () {
     }
 })
 input.onButtonPressed(Button.B, function () {
-    basic.showString("" + actualtime)
+    basic.showString("" + (actualtime))
 })
-input.onGesture(Gesture.Shake, function () {
+input.onLogoEvent(TouchButtonEvent.Pressed, function () {
     music._playDefaultBackground(music.builtInPlayableMelody(Melodies.Funeral), music.PlaybackMode.InBackground)
     basic.showIcon(IconNames.Skull)
     datalogger.deleteLog(datalogger.DeleteType.Full)
